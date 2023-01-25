@@ -1,0 +1,64 @@
+toolforge: 1.0
+container: kdvh6tkl
+type: tool
+environment:
+  size: medium
+parameters:
+  - type: string
+    domain:
+      type: pattern
+      pattern: .{1,80}
+    name: IdColumnName
+    description: |
+      The name of the column in the `SocialPosts` input to use as the post ID
+      in the Entities output. This column should have a unique value for each
+      social post. Typical choices are ID and URL values. 
+    required: true
+  - type: string
+    domain:
+      type: pattern
+      pattern: .{1,80}
+    name: TextColumnName
+    description: |
+      The name of the column in the `SocialPosts` input to use as the post text
+      to parse. This column should contain the post "body," which therefore
+      contains the entities being parsed. 
+    required: true
+inputs:
+  - name: SocialPosts
+    description: |
+      The spreadsheet containing the social media posts to analyze. The
+      spreadsheet must contain at least two columns, which are named in the
+      above parameters `IdColumnName` and `TextColumnName`.
+    extensions:
+      - txt
+      - csv
+      - xls
+      - xlsx
+outputs:
+  - name: Entities
+    description: |
+      The entity data parsed from the social media posts in the `SocialPosts`
+      input. If there are more than one million entities, then only the first
+      one million are shown. The output will contain the following columns:
+
+      * `id` -- The social post value from the `IdColumnName` column
+      * `type` -- The type of entity, e.g., `hashtag`, `link`, etc.
+      * `value` -- The value of the entity, e.g., `#HelloWorld`, `https://cnn.com/`, etc.
+    extensions:
+      - csv
+      - xlsx
+  - name: Counts
+    description: |
+      A frequency analysis of the entity data parsed from the social media
+      posts in the `SocialPosts` input. If there are more than one million
+      unique entities, then only the first one million are shown. The output
+      will appear in order of count descending and will contain the following
+      columns:
+
+      * `type` -- The type of entity, e.g., `hashtag`, `link`, etc.
+      * `value` -- The value of the entity, e.g., `#HelloWorld`, `https://cnn.com/`, etc.
+      * `count` -- The number of times the entity was found in the `SocialPosts` input.
+    extensions:
+      - csv
+      - xlsx      
