@@ -24,7 +24,7 @@ jobs:
           MAVEN_SETTINGS: ${{ secrets.MAVEN_SETTINGS }}
         run: mkdir -p ~/.m2 && echo "$MAVEN_SETTINGS" >~/.m2/settings.xml
       - name: Cache local Maven repository
-        uses: actions/cache@v3
+        uses: actions/cache@v3.2.4
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
