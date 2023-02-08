@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lts/ubuntu:latest
+FROM docker.toolforge.io/public/ubuntu:22.04
 
 RUN apt-get update \
     && apt-get -y -q --no-install-recommends install openjdk-17-jre-headless
