@@ -40,11 +40,13 @@ outputs:
     description: |
       The entity data parsed from the social media posts in the `SocialPosts`
       input. If there are more than one million entities, then only the first
-      one million are shown. The output will contain the following columns:
+      one million are shown. To expedite analysis, entities are lowercased,
+      except for entities where case is significant. The output will contain
+      the following columns:
 
       * `id` -- The social post value from the `IdColumnName` column
       * `type` -- The type of entity, e.g., `hashtag`, `link`, etc.
-      * `value` -- The value of the entity, e.g., `#HelloWorld`, `https://cnn.com/`, etc.
+      * `value` -- The value of the entity, e.g., `#helloworld`, `https://cnn.com/`, etc.
     extensions:
       - csv
       - xlsx
@@ -52,12 +54,12 @@ outputs:
     description: |
       A frequency analysis of the entity data parsed from the social media
       posts in the `SocialPosts` input. If there are more than one million
-      unique entities, then only the first one million are shown. The output
-      will appear in order of count descending and will contain the following
-      columns:
+      unique entities, then only the first one million are shown. To expedite
+      analysis, entities are lowercased, except for entities where case is
+      significant. The output will contain the following columns:
 
       * `type` -- The type of entity, e.g., `hashtag`, `link`, etc.
-      * `value` -- The value of the entity, e.g., `#HelloWorld`, `https://cnn.com/`, etc.
+      * `value` -- The value of the entity, e.g., `#helloworld`, `https://cnn.com/`, etc.
       * `count` -- The number of times the entity was found in the `SocialPosts` input.
     extensions:
       - csv
