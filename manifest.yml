@@ -21,7 +21,7 @@ parameters:
     name: TextColumnName
     description: |
       The name of the column in the `SocialPosts` input to use as the post text
-      to parse. This column should contain the post "body," which therefore
+      to parse. This column should contain the post "body", which therefore
       contains the entities being parsed. 
     required: true
 inputs:
