@@ -38,7 +38,7 @@
         <java.version>17</java.version>
         <discourse.version>0.0.2</discourse.version>
         <chardet4j.version>72.1.1</chardet4j.version>
-        <slf4j.version>1.7.36</slf4j.version>
+        <slf4j.version>2.0.11</slf4j.version>
         <guava.version>31.1-jre</guava.version>
         <toolforge4j.version>0.0.0</toolforge4j.version>
         <tabular4j.version>0.0.0-b2</tabular4j.version>
